@@ -9,9 +9,16 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View, Alert, TouchableOpacity, ScrollView,} from 'react-native';
 import { Card} from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
+import {useNavigation} from '@react-navigation/core';
 
+export default function Paciente() {
 
-export default function App() {
+  const navigation = useNavigation(); 
+
+  function handleStart(){
+    navigation.navigate('SelecionarVideos')
+  }
+
   Alert.alert(
     'Como usar?',
     'Para espelhar a tela em Android baixe: Screen Mirror | Para espelhar a tela em IOS baixe: Mirror MacPC.',
@@ -252,7 +259,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 25,
     alignContent:'flex-start',
-   },
- 
- 
-});
+   }
+})

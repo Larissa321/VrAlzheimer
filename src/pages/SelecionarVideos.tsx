@@ -1,19 +1,20 @@
-// Instalar todos os comandos abaixo e depois dar "yarn start" ou "expo start"
-
-// { expo install expo-linear-gradient }
-// { npm i @react-native-community/checkbox }
-// { yarn add react-native-paper }
-
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView, Platform, } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import CheckBox from '@react-native-community/checkbox';
 import { Card } from 'react-native-paper';
+import {useNavigation} from '@react-navigation/core';
 
-export default function App() {
+export default function SelecionarVideos() {
    const [agree1, setAgree1] = useState(false);
    const [agree2, setAgree2] = useState(false);
    const [agree3, setAgree3] = useState(false);
+
+   const navigation = useNavigation(); 
+
+    function handleStart(){
+      navigation.navigate('Paciente')
+    }
 
    return (
      

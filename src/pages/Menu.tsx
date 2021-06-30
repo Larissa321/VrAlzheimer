@@ -1,7 +1,3 @@
-// Instalar comandos a baixo e depois dar "yarn start" ou "expo start"
-
-// { npm install --save react-native-vector-icons }
-
 import React from 'react';
 import {
   Text,
@@ -11,38 +7,30 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
-  Button,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/core';
 
-export default function App() {
+export default function Menu() {
+
+  const navigation = useNavigation(); 
+
+  function handleStart(){
+    navigation.navigate('Paciente')
+  }
+
     return (
       <KeyboardAvoidingView style={styles.background}>
         <View style={styles.header}>
           <Text style={styles.textfooter}>VR ALZHEIMER</Text>
         </View>
-        
 
         <View style={styles.body}>
-      
           <TouchableOpacity style={styles.btnsubmit}>
-
-          <Image
-             style={styles.image1}
-             source={require('./src/assets/Add.png')} />
-
             <Text style={styles.textsubmit}> Novo Paciente </Text>
-           
-            
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnsubmit}  onPress={() => { props.navigation.navigate("Video") }}>
-
-            <Image
-             style={styles.image2}
-             source={require('./src/assets/Lista.png')} />
-
+          <TouchableOpacity style={styles.btnsubmit}  onPress={handleStart}>
             <Text style={styles.textsubmit}> Lista de Pacientes </Text>
-            
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
@@ -57,20 +45,14 @@ const styles = StyleSheet.create({
   },
   btnsubmit: {
     backgroundColor: '#FFFFFF',
-    width: 250,
-    height: 180,
+    width: '70%',
     borderRadius: 20,
     alignItems: 'center',
-    padding: 50,
-    marginTop: 75,
-    shadowColor: 'rgba(0,0,0, .4)', // IOS
-    shadowOffset: { height: 2, width: 2 }, // IOS
-    shadowOpacity: 1, // IOS
-    shadowRadius: 1, //IOS
+    padding: 70,
+    marginTop: 20,
   },
   textsubmit: {
-    fontSize: 16,
-    fontWeight: "bold",
+    fontSize: 18,
   },
   header: {
     backgroundColor: '#00009C',
@@ -86,19 +68,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: '80%',
     justifyContent: 'center',
-  },
-
-  image1: {
-    height: 50,
-    width: 50,
-    alignItems: 'center',
-    marginRight: 10,
-  },
-
-  image2: {
-    height: 50,
-    width: 50,
-    marginTop: 5,
-    alignItems: 'center',
-  },
-});
+  }
+})

@@ -1,20 +1,35 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import {Cadastro} from '../pages/Cadastro'
+import Login from '../pages/Login'
+import  Menu  from '../pages/Menu'
+import SelecionarVideos from '../pages/SelecionarVideos'
+import  Paciente  from '../pages/Paciente'
 
 const stackRoutes = createStackNavigator();
 
-const AppRoutes: React.FC = () => (
-    <stackRoutes.Navigator
+const AppRoutes : React.FC = () => (
+  <stackRoutes.Navigator
     headerMode='none'
-    >
-
+  >
     <stackRoutes.Screen
-        name="Cadastro"
-        component={Cadastro}
+      name="Login"
+      component={Login}
     />
-    </stackRoutes.Navigator>
+    <stackRoutes.Screen
+      name="Menu"
+      component={Menu}
+    />
+    <stackRoutes.Screen
+      name="SelecionarVideos"
+      component={SelecionarVideos}
+    />
+    <stackRoutes.Screen
+      name="Paciente"
+      component={Paciente}
+    />
+ 
+  </stackRoutes.Navigator>
 )
-
+ 
 export default AppRoutes;
