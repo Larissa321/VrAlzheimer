@@ -1,3 +1,7 @@
+// Instalar comandos a baixo e depois dar "yarn start" ou "expo start"
+
+// { npm install --save react-native-vector-icons }
+
 import React from 'react';
 import {
   Text,
@@ -7,112 +11,94 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
-  Platform,
-  ScrollView,
+  Button,
 } from 'react-native';
 
 export default function App() {
-
     return (
-      <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        enabled
-        style={styles.background}>
-        {/* <ScrollView style={{flex: 1}}>   */}
-        <View style={styles.viewlogo}>
-         
-        <Image
-        style={styles.imagee}
-        source={{
-          uri: 'https://raw.githubusercontent.com/pedro-limma/VR-Alzheimer/master/mobile/src/assets/VR_design.png',
-        }}
-      />
-          <Text style={styles.vrtext}> VR ALZHEIMER </Text>
+      <KeyboardAvoidingView style={styles.background}>
+        <View style={styles.header}>
+          <Text style={styles.textfooter}>VR ALZHEIMER</Text>
         </View>
+        
 
-        <View style={styles.conteiner}>
-          <TextInput
-            style={styles.input}
-            placeholder="Email"
-            autoCorrect={false}
-            onChangeText={() => {}}
-          />
-
-          <TextInput
-            style={styles.input}
-            placeholder="Senha"
-            autoCorrect={false}
-            secureTextEntry={true}
-            onChangeText={() => {}}
-          />
-
+        <View style={styles.body}>
+      
           <TouchableOpacity style={styles.btnsubmit}>
-            <Text style={styles.textsubmit} onPress={() => { props.navigation.navigate("Menu") }}> Entrar </Text>
+
+          <Image
+             style={styles.image1}
+             source={require('./src/assets/Add.png')} />
+
+            <Text style={styles.textsubmit}> Novo Paciente </Text>
+           
+            
           </TouchableOpacity>
 
-          <TouchableOpacity>
-            <Text style={styles.textt}> Criar Conta </Text>
+          <TouchableOpacity style={styles.btnsubmit}  onPress={() => { props.navigation.navigate("Video") }}>
+
+            <Image
+             style={styles.image2}
+             source={require('./src/assets/Lista.png')} />
+
+            <Text style={styles.textsubmit}> Lista de Pacientes </Text>
+            
           </TouchableOpacity>
         </View>
-        {/* </ScrollView> */}
       </KeyboardAvoidingView>
     );
 }
 
 const styles = StyleSheet.create({
   background: {
-    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: '#0087E2',
-  },
-  viewlogo: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  conteiner: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '90%',
-  },
-  input: {
-    backgroundColor: '#fff',
-    width: '90%',
-    height: '15%',
-    marginBottom: 15,
-    color: '#222',
-    fontSize: 17,
-    borderRadius: 20,
-    padding: 10,
+    height: '100%',
   },
   btnsubmit: {
-    backgroundColor: '#E59021',
-    width: '90%',
-    height: '15%',
+    backgroundColor: '#FFFFFF',
+    width: 250,
+    height: 180,
     borderRadius: 20,
     alignItems: 'center',
-    justifyContent: 'center',
+    padding: 50,
+    marginTop: 75,
+    shadowColor: 'rgba(0,0,0, .4)', // IOS
+    shadowOffset: { height: 2, width: 2 }, // IOS
+    shadowOpacity: 1, // IOS
+    shadowRadius: 1, //IOS
   },
   textsubmit: {
-    color: '#fff',
-    fontSize: 18,
+    fontSize: 16,
+    fontWeight: "bold",
   },
-  imagee: {
-    height: 94,
-    width: 102,
-    marginTop: 60,
+  header: {
+    backgroundColor: '#00009C',
+    padding: 20,
+    width: '100%',
     alignItems: 'center',
   },
-  textt: {
-    marginTop: 10,
-    marginLeft: 100,
+  textfooter: {
     color: 'white',
+    fontSize: 25,
   },
-  vrtext: {
-    padding: 10,
-    fontSize: 30,
-    color: 'white',
+  body: {
+    alignItems: 'center',
+    height: '80%',
+    justifyContent: 'center',
+  },
+
+  image1: {
+    height: 50,
+    width: 50,
+    alignItems: 'center',
+    marginRight: 10,
+  },
+
+  image2: {
+    height: 50,
+    width: 50,
+    marginTop: 5,
+    alignItems: 'center',
   },
 });
