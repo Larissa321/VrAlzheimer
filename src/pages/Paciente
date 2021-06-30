@@ -1,3 +1,10 @@
+// Instalar todos os comandos abaixo e depois dar "yarn start" ou "expo start"
+
+// { expo install expo-linear-gradient }
+// { npm i @react-native-community/checkbox }
+// { yarn add react-native-paper }
+
+
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Alert, TouchableOpacity, ScrollView,} from 'react-native';
 import { Card} from 'react-native-paper';
