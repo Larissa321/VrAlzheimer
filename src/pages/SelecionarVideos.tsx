@@ -13,7 +13,7 @@ export default function SelecionarVideos() {
    const navigation = useNavigation(); 
 
     function handleStart(){
-      navigation.navigate('Paciente')
+      navigation.navigate('Menu')
     }
 
    return (
@@ -166,7 +166,7 @@ export default function SelecionarVideos() {
              <TouchableOpacity
                style={styles.voltar} >
                                             
-              <Text style={styles.voltarTexto}>VOLTAR</Text>
+              <Text style={styles.voltarTexto} onPress={handleStart}>VOLTAR</Text>
 
              </TouchableOpacity>
 
@@ -174,10 +174,7 @@ export default function SelecionarVideos() {
          
             <View style={{flex:1,}}>
 
-              <TouchableOpacity 
-                style={styles.evolucao} >
-                 <Text style={styles.evolucaoTexto}>EVOLUÇÃO</Text>
-              </TouchableOpacity>
+              
 
             </View>
                 

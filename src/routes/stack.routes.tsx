@@ -2,9 +2,10 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Login from '../pages/Login'
-import  Menu  from '../pages/Menu'
+import Menu from '../pages/Menu'
 import SelecionarVideos from '../pages/SelecionarVideos'
-import  Paciente  from '../pages/Paciente'
+import Paciente from '../pages/Paciente'
+import CriarEvolucao from '../pages/CriarEvolucao'
 
 const stackRoutes = createStackNavigator();
 
@@ -27,6 +28,10 @@ const AppRoutes : React.FC = () => (
     <stackRoutes.Screen
       name="Paciente"
       component={Paciente}
+    />
+    <stackRoutes.Screen
+      name="CriarEvolucao"
+      component={CriarEvolucao}
     />
  
   </stackRoutes.Navigator>

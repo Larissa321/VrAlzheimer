@@ -17,6 +17,9 @@ export default function Menu() {
   function handleStart(){
     navigation.navigate('Paciente')
   }
+  function handleStart2(){
+    navigation.navigate('SelecionarVideos')
+  }
 
     return (
       <KeyboardAvoidingView style={styles.background}>
@@ -25,11 +28,11 @@ export default function Menu() {
         </View>
 
         <View style={styles.body}>
-          <TouchableOpacity style={styles.btnsubmit}>
+          <TouchableOpacity style={styles.btnsubmit} onPress={handleStart2}>
             <Text style={styles.textsubmit}> Novo Paciente </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnsubmit}  onPress={handleStart}>
+          <TouchableOpacity style={styles.btnsubmit} onPress={handleStart}>
             <Text style={styles.textsubmit}> Lista de Pacientes </Text>
           </TouchableOpacity>
         </View>

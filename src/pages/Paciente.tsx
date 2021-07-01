@@ -16,7 +16,10 @@ export default function Paciente() {
   const navigation = useNavigation(); 
 
   function handleStart(){
-    navigation.navigate('SelecionarVideos')
+    navigation.navigate('CriarEvolucao')
+  }
+  function handleStart2(){
+    navigation.navigate('Menu')
   }
 
   Alert.alert(
@@ -107,14 +110,16 @@ const remote = 'https://i.pinimg.com/originals/54/27/10/542710e5150ee4f7340bea64
                    
        
             <TouchableOpacity 
-               style={styles.voltar} >
+               style={styles.voltar}
+               onPress={handleStart2}>
                <Text style={styles.assistirTexto}>VOLTAR</Text>
              </TouchableOpacity>
      
 
       
               <TouchableOpacity 
-                 style={styles.evolucao} >
+                 style={styles.evolucao}
+                 onPress={handleStart}>
                  <Text style={styles.assistirTexto}>EVOLUÇÃO</Text>
               </TouchableOpacity>
 

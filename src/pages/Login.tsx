@@ -8,10 +8,17 @@ import {
   TextInput,
   TouchableOpacity,
   Platform,
-  ScrollView,
+  ScrollView
 } from 'react-native';
+import {useNavigation} from '@react-navigation/core';
+import {ButtonLaranja} from '../components/Button';
 
-export default function App() {
+export default function Login() {
+  const navigation = useNavigation(); 
+
+  function handleStart(){
+    navigation.navigate('Menu')
+  }
 
     return (
       <KeyboardAvoidingView
@@ -21,9 +28,7 @@ export default function App() {
         {/* <ScrollView style={{flex: 1}}>   */}
         <View style={styles.viewlogo}>
          
-        <Image
-             style={styles.imagee}
-             source={require('./src/assets/VR_design.png')} />
+        
           <Text style={styles.vrtext}> VR ALZHEIMER </Text>
         </View>
 
@@ -42,10 +47,11 @@ export default function App() {
             secureTextEntry={true}
             onChangeText={() => {}}
           />
-
-          <TouchableOpacity style={styles.btnsubmit}>
-            <Text style={styles.textsubmit} onPress={() => { props.navigation.navigate("Menu") }}> Entrar </Text>
-          </TouchableOpacity>
+          <View  style={styles.button}>
+            <ButtonLaranja
+            title={'Entrar'}
+            onPress={handleStart}/>
+          </View>
 
           <TouchableOpacity>
             <Text style={styles.textt}> Criar Conta </Text>
@@ -112,4 +118,8 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: 'white',
   },
+  button:{
+    paddingVertical:20,
+    alignItems:'center',
+  }
 });
