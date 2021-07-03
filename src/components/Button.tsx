@@ -37,24 +37,22 @@ const styles = StyleSheet.create({
     fontSize:16,
     fontWeight: 'bold'
   },
+  
   conteinerCinza:{
-    width:"60%",
-    backgroundColor: '#0C141F',
+    width:"40%",
+    backgroundColor: '#FFFFFF78',
     justifyContent:'center',
     alignItems:'center',
     borderRadius:16,
-    height:50,
-    marginBottom: 150,
-    
+    height:50
   },
+
   conteinerLaranja:{
-    width:"60%",
-    backgroundColor: '#F8B059',
+    width:"40%",
+    backgroundColor: '#E59021',
     justifyContent:'center',
     alignItems:'center',
     borderRadius:16,
-    height:50,
-    marginVertical:5
-    
+    height:50    
   }
 })
