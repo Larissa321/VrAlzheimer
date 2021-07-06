@@ -5,7 +5,9 @@ import Login from '../pages/Login'
 import Menu from '../pages/Menu'
 import SelecionarVideos from '../pages/SelecionarVideos'
 import Paciente from '../pages/Paciente'
-import CriarEvolucao from '../pages/CriarEvolucao'
+import EvolucaoNova from '../pages/EvolucaoNova'
+import EvolucaoAnte from '../pages/EvolucaoAnte'
+import Registro from '../pages/Registro'
 
 const stackRoutes = createStackNavigator();
 
@@ -30,8 +32,16 @@ const AppRoutes : React.FC = () => (
       component={Paciente}
     />
     <stackRoutes.Screen
-      name="CriarEvolucao"
-      component={CriarEvolucao}
+      name="EvolucaoNova"
+      component={EvolucaoNova}
+    />
+    <stackRoutes.Screen
+      name="EvolucaoAnte"
+      component={EvolucaoAnte}
+    />
+    <stackRoutes.Screen
+      name="Registro"
+      component={Registro}
     />
  
   </stackRoutes.Navigator>

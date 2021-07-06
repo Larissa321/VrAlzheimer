@@ -16,7 +16,7 @@ export default function Paciente() {
   const navigation = useNavigation(); 
 
   function handleStart(){
-    navigation.navigate('CriarEvolucao')
+    navigation.navigate('EvolucaoNova')
   }
   function handleStart2(){
     navigation.navigate('Menu')

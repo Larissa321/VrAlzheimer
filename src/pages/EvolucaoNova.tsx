@@ -1,5 +1,4 @@
 import React from 'react';
-import {LinearGradient} from 'expo-linear-gradient';
 import {
   Text,
   View,
@@ -21,11 +20,16 @@ export default function CriarEvolucao(){
     function handleStart(){
         navigation.navigate('Paciente')
     }
+    function handleStart2(){
+      navigation.navigate('EvolucaoAnte')
+    }
 
     return (
       <SafeAreaView style={estilo.conteiner}> 
 
         <Header/>    
+
+        <Text style={estilo.texto}>Data: dd/mm/aaaa</Text>
 
         <View style={estilo.cardMaior}>  
           <Card style={estilo.cards}>  
@@ -44,7 +48,7 @@ export default function CriarEvolucao(){
           onPress={handleStart}></ButtonCinza>
           <ButtonLaranja
           title={'Salvar'}
-          onPress={handleStart}></ButtonLaranja>
+          onPress={handleStart2}></ButtonLaranja>
         </View>
     
       </SafeAreaView>
@@ -55,7 +59,12 @@ export default function CriarEvolucao(){
     conteiner:{
       flex:1,
       backgroundColor:"#0091F2",
-      alignItems:'center'
+      alignItems:'center',
+      justifyContent:'space-between'
+    },
+    texto:{
+      color:'white',
+      fontSize:20
     },
     cardMaior:{
       width:'85%',
@@ -65,24 +74,20 @@ export default function CriarEvolucao(){
     cards:{
       fontSize: 25,
       height: '60%',
-      borderRadius: 25,
+      borderRadius: 20,
       justifyContent:'space-between'
     },
 
     botao:{
       width:'90%',
       flexDirection:'row',
-      justifyContent: 'space-evenly'
+      justifyContent: 'space-evenly',
+      marginBottom:20
     },
 
     inputBox:{
       height:20,        
       margin: 20,
       justifyContent:'flex-start'
-    },
-
-    scrollview:{
-      width: 320,
-      height: 200
     }
   })
