@@ -9,6 +9,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/core';
+import add from '../assets/Add.png'
+import list from '../assets/Lista.png'
+
 
 export default function Menu() {
 
@@ -29,10 +32,12 @@ export default function Menu() {
 
         <View style={styles.body}>
           <TouchableOpacity style={styles.btnsubmit} onPress={handleStart2}>
+            <img src={add} />
             <Text style={styles.textsubmit}> Novo Paciente </Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.btnsubmit} onPress={handleStart}>
+            <img src={list} />
             <Text style={styles.textsubmit}> Lista de Pacientes </Text>
           </TouchableOpacity>
         </View>
@@ -56,6 +61,7 @@ const styles = StyleSheet.create({
   },
   textsubmit: {
     fontSize: 18,
+    textAlignVertical: 'center'
   },
   header: {
     backgroundColor: '#00009C',
