@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 import {ButtonLaranja} from '../components/Button';
+import logo from '../assets/VR_design.png'
 
 export default function Login() {
   const navigation = useNavigation(); 
@@ -27,8 +28,7 @@ export default function Login() {
         style={styles.background}>
         {/* <ScrollView style={{flex: 1}}>   */}
         <View style={styles.viewlogo}>
-         
-        
+         <img src={logo} />
           <Text style={styles.vrtext}> VR ALZHEIMER </Text>
         </View>
 
@@ -55,6 +55,10 @@ export default function Login() {
 
           <TouchableOpacity>
             <Text style={styles.textt}> Criar Conta </Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity>
+            <Text style={styles.textt}> Esqueci minha Senha </Text>
           </TouchableOpacity>
         </View>
         {/* </ScrollView> */}
@@ -110,7 +114,6 @@ const styles = StyleSheet.create({
   },
   textt: {
     marginTop: 10,
-    marginLeft: 100,
     color: 'white',
   },
   vrtext: {
