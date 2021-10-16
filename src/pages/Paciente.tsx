@@ -10,6 +10,9 @@ import { StyleSheet, Text, View, Alert, TouchableOpacity, ScrollView,} from 'rea
 import { Card} from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
 import {useNavigation} from '@react-navigation/core';
+import logo from '../assets/VR_design.png'
+import back from '../assets/back.png'
+import question from '../assets/question.png'
 
 export default function Paciente() {
 
@@ -53,55 +56,64 @@ const remote = 'https://i.pinimg.com/originals/54/27/10/542710e5150ee4f7340bea64
             top: 0,
             height: 400,
           }}
-        />
+        /> 
 
     <ScrollView style={styles.scrollview}> 
+    
+    <View>
+    <TouchableOpacity onPress={handleStart2} style={styles.back}>
+    <img src={back} />
+    </TouchableOpacity>
+    <TouchableOpacity onPress={alert} style={styles.question}>
+    <img src={question} />
+    </TouchableOpacity>
+    </View>
+    
+    <View style={styles.viewlogo}>
+    <img src={logo} />
+    </View>
      <View style={styles.telaTitulo}>
        
-     <Text style={styles.usuario}>Pedro Fonseca</Text>
-
+     <Text style={styles.usuario}>Pedro Fonseca</Text> {/*Get name Paciente*/}
+     <Text style={styles.info}>65 anos</Text> {/*Get idade Paciente*/}
+     <Text style={styles.info}>Eubasico</Text> {/*Get incapacidade Paciente*/}
+     <Text style={styles.info}>Alzheimer Moderado</Text> {/*Get grau Alzheimer Paciente*/}
+     
      <TouchableOpacity>
-      <Text style={styles.verPerfil}>ver perfil</Text>
+      <Text style={styles.verPerfil}>Mais informações</Text>
      </TouchableOpacity> 
 
-      <TouchableOpacity onPress = {showAlert} style = {styles.comoUsar}>
-       <Text>Como usar?</Text>
+      <TouchableOpacity onPress = {showAlert} style = {styles.evolucoesAnteriores}>
+       <Text style={styles.evolucoesText}>Evoluções Anteriores</Text>
       </TouchableOpacity>
 
     </View>
 
-    <Card style={styles.cards}>
-         <Card.Title style={styles.cardsTexto} title="Parque" />
-         <Card.Title style={styles.subTexto} title="5 min" />
+    <View style={styles.telaTitulo}>
+       
+       <Text style={styles.usuario}>Valsa Venesiana</Text> {/*Get name Paciente*/}
+       <Text style={styles.info}>2 minutos</Text> {/*Get idade Paciente*/}
+       <iframe
+        src="https://www.youtube.com/embed/3sM3yVV-Yrg?start=11" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen" 
+        allowfullscreen></iframe>
 
-        <TouchableOpacity
-          style={styles.assistir} >
-          <Text style={styles.assistirTexto}>Assistir</Text>
-        </TouchableOpacity>
+      </View>
 
-         <Card.Cover style={styles.imagens} source={{ uri: 'https://www.osmais.com/wallpapers/201308/bicicleta-parque-wallpaper.jpg' }} />
-         
-        </Card>
+      <View style={styles.telaTitulo}>
+       
+       <Text style={styles.usuario}>Caminhada na Floresta</Text> {/*Get name Paciente*/}
+       <Text style={styles.info}>8 minutos</Text> {/*Get idade Paciente*/}
+       <iframe 
+       src="https://www.youtube.com/embed/OkWVZa8mwog?start=11" 
+       title="YouTube video player" 
+       frameborder="0" 
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen" 
+       allowfullscreen></iframe>
 
-        <Card style={styles.cards}>
-         <Card.Title style={styles.cardsTexto} title= "Praia" />
-         <Card.Title style={styles.subTexto} title= "15 min" />
-          <TouchableOpacity 
-          style={styles.assistir} >
-          <Text style={styles.assistirTexto}>Assistir</Text>
-        </TouchableOpacity>
-         <Card.Cover style={styles.imagens} source={{ uri: 'https://profelisson.com.br/wp-content/uploads/2017/11/praia-palmeiras-wallpaper.jpg' }} />
-        </Card>
-
-        <Card style={styles.cards}>
-         <Card.Title style={styles.cardsTexto} title="Floresta" />
-         <Card.Title style={styles.subTexto} title="10 min"  />
-          <TouchableOpacity 
-          style={styles.assistir} >
-          <Text style={styles.assistirTexto}>Assistir</Text>
-        </TouchableOpacity>
-         <Card.Cover style={styles.imagens} source={{ uri:'https://wallpaperaccess.com/full/3352658.jpg' }} />
-        </Card>
+      </View>
 
        </ScrollView>
 
@@ -137,26 +149,51 @@ const styles = StyleSheet.create({
    flex: 1,
    backgroundColor: '#0091F2',
    alignItems: 'center',
+  }, 
+  viewlogo: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+   
   },
-
+  back: {
+    flex: 1,
+    alignSelf:'flex-start',
+    marginLeft:20,
+    marginTop: 20,
+    width: 20,
+    height: 20,
+   
+  },
+  question: {
+    flex: 1,
+    alignSelf: 'flex-end',
+    width: 20,
+    height: 20,  
+  },
   usuario: {
-    fontSize: 30,
+    fontSize: 20,
     color: 'black',
     fontWeight:'bold',
-    width:300,
+   },
+   info: {
+    fontSize: 14,
+    color: 'black',
+    fontWeight:'bold',
    },
 
    telaTitulo: {
-    
     backgroundColor: 'white',
     marginTop: 35,
     marginBottom: 1,
-    marginRight:20,
+    marginRight:10,
+    marginLeft: 10,
     padding: 40,
-    width:400,
+    borderRadius: 20,
+
    },
 
-   comoUsar: {
+  comoUsar: {
     backgroundColor: '#4ba37a',
     width: 100,
     borderRadius: 50,
@@ -164,10 +201,22 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginLeft: 150,
  },
+ evolucoesAnteriores: {
+  width: 160,
+  alignItems: 'center',
+  marginTop: 15,
+  marginLeft: 90,
+},
+evolucoesText: {
+  color: '#4ba37a',
+  alignItems: 'center',
+  marginLeft: 20,
+  fontWeight: 'bold',
+},
 
  verPerfil: {
-  fontSize: 25,
-  color:'lightblue',  
+  fontSize: 12,
+  color:'#6192d3',  
   },
 
   linearGradient: {
@@ -189,6 +238,7 @@ const styles = StyleSheet.create({
   cardsTexto: {
     fontSize: 85,
     marginLeft: 10,
+    marginRight:10,
     fontWeight:'bold',
  
    },
@@ -225,19 +275,20 @@ const styles = StyleSheet.create({
 
    cards: {
     fontSize: 25,
-    marginLeft: 10.5,
-    width: 300,
-    height: 250,
-    marginBottom: 150,
-    marginTop: 60,
-    borderRadius: 25,
-    justifyContent:'space-between'
+    marginTop: 35,
+    marginBottom: 1,
+    marginRight:10,
+    marginLeft: 10,
+    padding: 40,
+    borderRadius: 20,
+    justifyContent:'space-between',
+    
+
    },
 
    scrollview: {
-    width: 320,
-    height: 200,
-   },
+      flex: 1,
+  },
 
    footer: {
     color: '#0080FF',
