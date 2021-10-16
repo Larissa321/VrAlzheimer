@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   },
 
   conteinerLaranja:{
-    width:"40%",
+    width:"150%",
     backgroundColor: '#E59021',
     justifyContent:'center',
     alignItems:'center',
