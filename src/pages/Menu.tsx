@@ -32,12 +32,12 @@ export default function Menu() {
 
         <View style={styles.body}>
           <TouchableOpacity style={styles.btnsubmit} onPress={handleStart2}>
-            <img src={add} />
+            <Image source={add} />
             <Text style={styles.textsubmit}> Novo Paciente </Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.btnsubmit} onPress={handleStart}>
-            <img src={list} />
+            <Image source={list} />
             <Text style={styles.textsubmit}> Lista de Pacientes </Text>
           </TouchableOpacity>
         </View>
