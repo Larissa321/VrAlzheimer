@@ -6,7 +6,8 @@
 
 
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Alert, TouchableOpacity, ScrollView,} from 'react-native';
+import { StyleSheet, Text, View, Alert, TouchableOpacity, ScrollView,Image} from 'react-native';
+import { WebView } from 'react-native-webview';
 import { Card} from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
 import {useNavigation} from '@react-navigation/core';
@@ -45,7 +46,9 @@ export default function Paciente() {
  }
  
 const remote = 'https://i.pinimg.com/originals/54/27/10/542710e5150ee4f7340bea644f6c75f0.jpg';
-  return (
+  {/*Render não implementado corretamento preciso de auxilio*/}
+  render();{
+    return (
     <View style={styles.telaPrincipal}>
       <LinearGradient
           colors={['rgba(2, 24, 88, 0.4)', '#0091F2']}
@@ -59,21 +62,19 @@ const remote = 'https://i.pinimg.com/originals/54/27/10/542710e5150ee4f7340bea64
         /> 
 
     <ScrollView style={styles.scrollview}> 
-    
     <View>
     <TouchableOpacity onPress={handleStart2} style={styles.back}>
-    <img src={back} />
+    <Image source={back} />
     </TouchableOpacity>
     <TouchableOpacity onPress={alert} style={styles.question}>
-    <img src={question} />
+    <Image source={question} />
     </TouchableOpacity>
     </View>
     
     <View style={styles.viewlogo}>
-    <img src={logo} />
+    <Image source={logo} />
     </View>
      <View style={styles.telaTitulo}>
-       
      <Text style={styles.usuario}>Pedro Fonseca</Text> {/*Get name Paciente*/}
      <Text style={styles.info}>65 anos</Text> {/*Get idade Paciente*/}
      <Text style={styles.info}>Eubasico</Text> {/*Get incapacidade Paciente*/}
@@ -93,56 +94,39 @@ const remote = 'https://i.pinimg.com/originals/54/27/10/542710e5150ee4f7340bea64
        
        <Text style={styles.usuario}>Valsa Venesiana</Text> {/*Get name Paciente*/}
        <Text style={styles.info}>2 minutos</Text> {/*Get idade Paciente*/}
-       <iframe
-        src="https://www.youtube.com/embed/3sM3yVV-Yrg?start=11" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen" 
-        allowfullscreen></iframe>
+       <WebView
+          source={{html: '<iframe src=" https://www.youtube.com/embed/3sM3yVV-Yrg?start=11"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen" allowfullscreen>> </iframe>'}}
+       />
 
       </View>
 
       <View style={styles.telaTitulo}>
-       
        <Text style={styles.usuario}>Caminhada na Floresta</Text> {/*Get name Paciente*/}
        <Text style={styles.info}>8 minutos</Text> {/*Get idade Paciente*/}
-       <iframe 
-       src="https://www.youtube.com/embed/OkWVZa8mwog?start=11" 
-       title="YouTube video player" 
-       frameborder="0" 
-       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen" 
-       allowfullscreen></iframe>
-
+       <WebView
+          source={{html: '<iframe src="https://www.youtube.com/embed/OkWVZa8mwog?start=11"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen" allowfullscreen>> </iframe>'}}
+       />
       </View>
-
        </ScrollView>
-
-       <View style={styles.footer}>
-            
-                   
        
+       <View style={styles.footer}>
             <TouchableOpacity 
                style={styles.voltar}
                onPress={handleStart2}>
                <Text style={styles.assistirTexto}>VOLTAR</Text>
              </TouchableOpacity>
-     
 
-      
               <TouchableOpacity 
                  style={styles.evolucao}
                  onPress={handleStart}>
                  <Text style={styles.assistirTexto}>EVOLUÇÃO</Text>
               </TouchableOpacity>
-
-      
-        
-  
          </View>
-
    </View>
   );
 }
+}
+
 
 const styles = StyleSheet.create({
   telaPrincipal: {
