@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   btnsubmit: {
     backgroundColor: '#FFFFFF',
-    width: '70%',
+    width: '60%',
     borderRadius: 20,
     alignItems: 'center',
     padding: 70,
