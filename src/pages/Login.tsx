@@ -28,7 +28,8 @@ export default function Login() {
         style={styles.background}>
         {/* <ScrollView style={{flex: 1}}>   */}
         <View style={styles.viewlogo}>
-         <img src={logo} />
+         
+         <Image source={logo}/>
           <Text style={styles.vrtext}> VR ALZHEIMER </Text>
         </View>
 
