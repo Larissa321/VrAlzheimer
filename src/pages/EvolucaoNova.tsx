@@ -8,11 +8,11 @@ import {
   TouchableHighlight,
   Button,
   Platform,
+  ScrollView,
 } from "react-native";
 import { Card } from "react-native-paper";
 import { useNavigation } from "@react-navigation/core";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 import { Header } from "../components/Header";
 import { ButtonCinza, ButtonLaranja } from "../components/Button";
 import DateTimePicker from "@react-native-community/datetimepicker";
@@ -51,7 +51,8 @@ export default function CriarEvolucao() {
 
   return (
     <SafeAreaView style={estilo.conteiner}>
-      <Header />
+      <Header/>
+      <ScrollView style={estilo.scrollview}>
 
       <Text style={estilo.texto}>Data: </Text>
       <View>
@@ -65,22 +66,33 @@ export default function CriarEvolucao() {
         />
       </View>
       </View>
+      <View>
+      <TextInput
+            style={estilo.inputBox}
+            placeholder="Digite aqui"
+            multiline={true}
+            numberOfLines={10}
+            
+          />
+        </View>
 
+{/*
       <View style={estilo.cardMaior}>
         <Card style={estilo.cards}>
           <TextInput
             style={estilo.inputBox}
             placeholder="Digite aqui"
-            multiline
-            numberOfLines={5}
+            multiline={true}
+            numberOfLines={1}
           />
         </Card>
       </View>
-
+*/}
       <View style={estilo.botao}>
         <ButtonCinza title={"Voltar"} onPress={handleStart}></ButtonCinza>
         <ButtonLaranja title={"Salvar"} onPress={handleStart2}></ButtonLaranja>
       </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -108,19 +120,32 @@ const estilo = StyleSheet.create({
   },
 
   botao: {
-    width: "90%",
+    width: "80%",
     flexDirection: "row",
     justifyContent: "space-evenly",
-    marginBottom: 20,
+    alignContent:"center",
+    alignSelf:"center",
+    
   },
-
   inputBox: {
-    height: 20,
+    height: "60%",
+    maxHeight:300,
     margin: 20,
     justifyContent: "flex-start",
+    backgroundColor:'white',
+    borderRadius:10,
+    lineHeight:16,
+    fontSize:16,
+    padding: 10,
+    paddingTop:10,
+    paddingBottom:10
   },
   selecionarData: {
     backgroundColor:'white',
-    width: 115,
+    width: 116,
   },
+  scrollview: {
+    width: "100%",
+    height: "100%",
+   },
 });
