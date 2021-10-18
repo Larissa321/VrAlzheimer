@@ -16,7 +16,9 @@ import back from '../assets/back.png'
 import question from '../assets/question.png'
 
 
+
 export default function Paciente() {
+
 
   const navigation = useNavigation(); 
 
@@ -68,6 +70,7 @@ const remote = 'https://i.pinimg.com/originals/54/27/10/542710e5150ee4f7340bea64
     <View style={styles.viewlogo}>
     <Image source={logo} />
     </View>
+    
 
      <View style={styles.telaTitulo}>
      <Text style={styles.usuario}>Pedro Fonseca</Text>
@@ -78,7 +81,10 @@ const remote = 'https://i.pinimg.com/originals/54/27/10/542710e5150ee4f7340bea64
        <Text>Como usar?</Text>
       </TouchableOpacity>
     </View>
-    
+
+ 
+
+
     <View style={styles.telaVideo}>
      <Text style={styles.usuario}>Valsa Venesiana</Text>
      <Text style={styles.info}>2 minutos</Text>
@@ -95,12 +101,12 @@ const remote = 'https://i.pinimg.com/originals/54/27/10/542710e5150ee4f7340bea64
      <Text style={styles.usuario}>Caminhada na Floresta</Text>
      <Text style={styles.info}>8 minutos</Text> 
     </View>
-    
+       
     <View style={styles.video}>
       <YoutubePlayer
         play={false}
         height={200}
-        videoId={"iee2TATGMyI"}
+        videoId={"OkWVZa8mwog"}
       />
     </View>
        </ScrollView>
@@ -176,10 +182,12 @@ const styles = StyleSheet.create({
     marginRight:20,
     padding: 20,
     width:320,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
    },
 
    video: {
-    marginBottom:5
+    marginBottom:5,
    },
 
    comoUsar: {

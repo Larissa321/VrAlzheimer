@@ -21,7 +21,7 @@ export default function Menu() {
     navigation.navigate('Paciente')
   }
   function handleStart2(){
-    navigation.navigate('SelecionarVideos')
+    navigation.navigate('Lista')
   }
 
     return (
