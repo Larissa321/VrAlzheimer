@@ -8,6 +8,8 @@ import Paciente from '../pages/Paciente'
 import EvolucaoNova from '../pages/EvolucaoNova'
 import EvolucaoAnte from '../pages/EvolucaoAnte'
 import Registro from '../pages/Registro'
+import Lista from '../pages/Lista'
+
 
 const stackRoutes = createStackNavigator();
 
@@ -42,6 +44,10 @@ const AppRoutes : React.FC = () => (
     <stackRoutes.Screen
       name="Registro"
       component={Registro}
+    />
+    <stackRoutes.Screen
+      name="Lista"
+      component={Lista}
     />
  
   </stackRoutes.Navigator>
