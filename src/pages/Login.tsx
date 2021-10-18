@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{} from 'react';
 import {
   Text,
   View,
@@ -8,7 +8,10 @@ import {
   TextInput,
   TouchableOpacity,
   Platform,
-  ScrollView
+  ScrollView,
+  TouchableWithoutFeedback,
+  Keyboard
+  
 } from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 import {ButtonLaranja} from '../components/Button';
@@ -20,8 +23,10 @@ export default function Login() {
   function handleStart(){
     navigation.navigate('Menu')
   }
+  
 
     return (
+      <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
@@ -64,6 +69,7 @@ export default function Login() {
         </View>
         {/* </ScrollView> */}
       </KeyboardAvoidingView>
+  </TouchableWithoutFeedback>
     );
 }
 
@@ -80,7 +86,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   conteiner: {
-    flex: 1,
+    flex: 1.5,
     alignItems: 'center',
     justifyContent: 'center',
     width: '90%',
