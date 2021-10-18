@@ -12,8 +12,7 @@ import { Card} from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
 import {useNavigation} from '@react-navigation/core';
 import logo from '../assets/VR_design.png'
-import back from '../assets/back.png'
-import question from '../assets/question.png'
+import { ButtonCinza, ButtonLaranja } from "../components/Button";
 
 
 
@@ -112,23 +111,11 @@ const remote = 'https://i.pinimg.com/originals/54/27/10/542710e5150ee4f7340bea64
        </ScrollView>
 
        <View style={styles.footer}>
-            
-                   
+        <View style={styles.botao}>
+          <ButtonCinza title={"Voltar"} onPress={handleStart2}></ButtonCinza>
+          <ButtonLaranja title={"Evolução"} onPress={handleStart}></ButtonLaranja>
+        </View>
        
-            <TouchableOpacity 
-               style={styles.voltar}
-               onPress={handleStart2}>
-               <Text style={styles.assistirTexto}>VOLTAR</Text>
-             </TouchableOpacity>
-     
-
-      
-              <TouchableOpacity 
-                 style={styles.evolucao}
-                 onPress={handleStart}>
-                 <Text style={styles.assistirTexto}>EVOLUÇÃO</Text>
-              </TouchableOpacity>
-
       
         
   
@@ -278,26 +265,13 @@ const styles = StyleSheet.create({
     color: '#0080FF',
     marginLeft: 10,
    },
-
-   evolucao: {
-    width: 200,
-    height: 50,
-    backgroundColor: 'orange',
-    marginTop: 25,
-    marginBottom: 10,
-    marginLeft: 1,
-    alignItems: 'center',
-    borderRadius: 25,
-    alignContent:'flex-end',
-   },
- 
-    voltar: {
-    width: 200,
-    height: 50,
-    backgroundColor: '#81BEF7',
-    marginTop: 25,
-    alignItems: 'center',
-    borderRadius: 25,
-    alignContent:'flex-start',
-   }
+   botao: {
+    width: "80%",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignContent:"center",
+    alignSelf:"center",
+    marginBottom:20,
+    marginTop:20,    
+  },
 })
